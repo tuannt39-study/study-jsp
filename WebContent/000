@@ -1,0 +1,254 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP Demo</title>
+</head>
+<body>
+	
+	<h2>B5 - Vòng đời (Life Cycle) trong JSP</h2>
+	<b>Biên dịch JSP Khởi tạo JSP - Thực thi JSP - Hủy JSP</b> <br />
+	
+	<h2>B6 - Cú pháp trong JSP</h2>
+	<b>Scriptlet - Declarations - Expression - Comment - Directive - Action - Implicit - Điều khiển luồng: Các lệnh điều khiển luồng. Các lệnh vòng lặp. Các toán tử</b> <br />
+	
+	<h2>B7 - Directive trong JSP</h2>
+	<b>page Directive</b> <br />
+	<br />
+	Các thuộc tính của page directive trong JSP:  <br />
+	buffer - autoFlush - contentType - errorPage - isErrorPage - extends - import - info - isThreadSafe - language - session - isELIgnored - isScriptingEnabled <br />
+	<br />
+	<b>Include Directive</b> <br />
+	<b>Taglib Directive</b> <br />
+	
+	<h2>B8 - Action trong JSP</h2>
+	<b>jsp:include - jsp:useBean - jsp:setProperty - jsp:getProperty - jsp:forward - jsp:plugin - jsp:element - jsp:attribute - jsp:body - jsp:text</b> <br />
+	<br />
+	Các thuộc tính phổ biển của action trong JSP: <br />
+	id - scope <br />
+	
+	<h2>B9 - Đối tượng ẩn (Implicit) trong JSP</h2>
+	<b>request - response - out - session - application - config - pageContext - page - Exception</b> <br />
+	
+	<h2>B10 - Client Request trong JSP</h2>
+	<b>Accept - Accept-Charset - Accept-Encoding - Accept-Language - Authorization - Connection - Content-Length - Cookie - Host - If-Modified-Since - If-Unmodified-Since - Referer - User-Agent</b> <br />
+	<br />
+	Đối tượng HttpServletRequest trong JSP: <br />
+	Cookie[] getCookies() - Enumeration getAttributeNames() - Enumeration getHeaderNames() - Enumeration getParameterNames() - HttpSession getSession() - HttpSession getSession(boolean create) - Locale getLocale() 
+	- Object getAttribute(String name) - ServletInputStream getInputStream() - String getAuthType() - String getCharacterEncoding() - String getContentType() - String getContextPath() - String getHeader(String name) 
+	- String getMethod() - String getParameter(String name) - String getPathInfo() - String getProtocol() - String getQueryString() - String getRemoteAddr() - String getRemoteHost() - String getRemoteUser() - String getRequestURI() 
+	- String getRequestedSessionId() - String getServletPath() - String[] getParameterValues(String name) - boolean isSecure() - int getContentLength() - int getIntHeader(String name) - int getServerPort() <br />
+	<br />
+	Tên và giá trị tương ứng của HTTP Header Request trong JSP: <br />
+	accept - accept-language - user-agent - accept-encoding - host - connection - cache-control <br />
+	
+	<h2>B11 - Server Response trong JSP</h2>
+	<b>Allow - Set-Cookie - Retry-After - Refresh - Location - Last-Modified - Expires - Content-Type - Content-Length - Content-Language - Content-Encoding - Content-Disposition - Connection - Cache-Control</b> <br />
+	<br />
+	Đối tượng HttpServletResponse trong JSP <br />
+	String encodeRedirectURL(String url) - String encodeURL(String url) - boolean containsHeader(String name) - boolean isCommitted() - void addCookie(Cookie cookie) - void addDateHeader(String name, long date) - void addHeader(String name, String value) - void addIntHeader(String name, int value) - void flushBuffer() - void reset() - void resetBuffer() - void sendError(int sc) - void sendError(int sc, String msg) - void sendRedirect(String location) - void setBufferSize(int size) - void setCharacterEncoding(String charset) - void setContentLength(int len) - void setContentType(String type) - void setDateHeader(String name, long date) - void setHeader(String name, String value) - void setIntHeader(String name, int value) - void setLocale(Locale loc) -  void setStatus(int sc)<br />
+	 
+	<h2>B12 - Status Code trong JSP</h2>
+	100	Continue - 101	Switching  - 200	OK  - 201	Created  - 202	Accepted  - 203	Non-authoritative Information  - 204 No Content  - 205	Reset Content  - 206	Partial Content  - 300	Multiple Choices  - 301	Moved Permanently  - 302	Found  - 303	See Other  - 304	Not Modified  - 305	Use Proxy  - 306	Unuse - 307	Temporary Redirect - 400	Bad Request - 401	Unauthorized - 402	Payment Required - 403	Forbidden - 404	Not Found - 405	Method Not Allowed - 406	Not Acceptable - 407 Proxy Authentication Required - 408	Request Timeout - 409	Conflict - 410 Gone - 411	Length Required - 412	Precondition Failed - 413	Request Entity Too Large - 414	Request-url Too Long - 415	Unsupported Media Type - 417	Expectation Failed - 500	Internal Server Error - 501	Not Implemented - 502	Bad Gateway - 503	Service Unavailable - 504	Gateway Timeout - 505	HTTP Version Not Supported <br />
+	<br />
+	Phương thức để thiết lập HTTP Status Code <br />
+	public void setStatus ( int statusCode ) - public void sendRedirect(String url) - public void sendError(int code, String message)
+	 
+	<h2>B13 - From trong JSP</h2>
+	<b> Phương thức GET - POST</b> <br />
+	Đọc Form Data bởi sử dụng JSP <br />
+	getParameter() - getParameterValues() - getParameterNames() - getInputStream() <br />
+	
+	<h2>B14 - Filter trong JSP</h2>
+	<b>Authentication Filters - Data compression Filters - Encryption Filters - Các Filter mà kích hoạt các sự kiện truy cập nguồn  - Image Conversion Filters - Logging and Auditing Filters - MIME-TYPE Chain Filters - Tokenizing Filters - XSL/T Filter</b> <br />
+	<br />
+	Các phương thức JSP Filter <br />
+	public void doFilter (ServletRequest, ServletResponse, FilterChain) - public void init(FilterConfig filterConfig) - public void destroy()
+	
+	<h2>B15 - Cookie trong JSP</h2>
+	Các phương thức liên kết với Cookie trong JSP <br />
+	public void setDomain(String pattern) - public String getDomain() - public void setMaxAge(int expiry) - public int getMaxAge() - public String getName() - public void setValue(String newValue) - public String getValue() - public void setPath(String uri) - public String getPath() - public void setSecure(boolean flag) - public void setComment(String purpose) - public String getComment() <br />
+	Thiết lập Cookie với JSP <br />
+	Đọc Cookie với JSP <br />
+	Xóa Cookie với JSP <br />
+	
+	<h2>B16 - Session Tracking trong JSP</h2>
+	3 cách để duy trì session giữa Web Client và Web Server <br />
+	Sử dụng Cookie - Sử dụng các trường Hidden Form - Viết lại URL <br />
+	Viết lại URL <br />
+	public Object getAttribute(String name) - public Enumeration getAttributeNames() - public long getCreationTime() - public String getId() - public long getLastAccessedTime() - public int getMaxInactiveInterval() - public void invalidate() - public boolean isNew() - public void removeAttribute(String name) - public void setAttribute(String name, Object value) - public void setMaxInactiveInterval(int interval) <br />
+	Session Tracking trong JSP <br />
+	Xóa Session Data trong JSP <br />
+	public void removeAttribute(Stringname) - public void invalidate() - public void setMaxInactiveInterval(int interval) - Log out người sử dụng - Cấu hình web.xml <br />
+	 
+	<h2>B17 - Upload File trong JSP</h2>
+	Tạo một File Upload Form trong JSP <br />
+	Viết Backend JSP Script <br />
+	
+	<h2>B18 - Date trong JSP</h2>
+	Phương thức lớp Date <br />
+	boolean after(Date date) - boolean before(Date date) - Object clone( ) - int compareTo(Date date) - int compareTo(Object obj) - boolean equals(Object date) - long getTime( ) - int hashCode( ) - void setTime(long time) - String toString( ) <br />
+	Nhận Date và Time hiện tại <br />
+	So sánh Date  <br />
+	Định dạng Date <br />
+	Mã hóa định dạng SimpleDateFormat <br />
+
+	<h2>B19 - Redirect Page trong JSP</h2>
+	<b>sendRedirect()</b> <br />
+	
+	<h2>B20 - Hit Counter trong JSP</h2>
+	<b>getAttribute() - setAttribute()</b> <br />
+	Reset Hit Counter trong JSP <br />
+	
+	<h2>B21 - Auto Refresh</h2>
+	<b>setIntHeader()</b> <br />
+	
+	<h2>B22 - Gửi Email trong JSP</h2>
+	<b>JavaMail API - Java Activation Framework (JAF) -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -</b> <br />
+	Gửi một Email đơn giản trong JSP <br />
+	Gửi một HTML Email trong JSP <br />
+	Gửi Email với Attachment trong JSP <br />
+	Phần User Authentication <br />
+	Sử dụng Form để gửi Email trong JSP <br />
+	
+	<h2>B23 - Thư viện chuẩn - Standard Tag Library (JSTL) trong JSP</h2>
+	<b>Core Tags</b> <br />
+	<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/html/core" %> --%>
+
+	<!-- <c:out >
+	<c:set >
+	<c:remove >
+	<c:catch>
+	<c:if>
+	<c:choose>
+	<c:when>
+	<c:otherwise >
+	<c:import>
+	<c:forEach >
+	<c:forTokens>
+	<c:param>
+	<c:redirect >
+	<c:url> -->
+
+	<b>Formatting tags</b> <br />
+	<%-- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/html/fmt" %> --%>
+	
+	<!-- <fmt:formatNumber>
+	<fmt:parseNumber>
+	<fmt:formatDate>
+	<fmt:parseDate>
+	<fmt:bundle>
+	<fmt:setLocale>
+	<fmt:setBundle>
+	<fmt:timeZone>
+	<fmt:setTimeZone>
+	<fmt:message>
+	<fmt:requestEncoding> -->
+	
+	<b>SQL tags</b> <br />
+	<%-- <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/html/sql" %> --%>
+	
+	<!-- <sql:setDataSource>
+	<sql:query>
+	<sql:update>
+	<sql:param>
+	<sql:dateParam>
+	<sql:transaction > -->
+	
+	<b>XML tags</b> <br />
+	<%-- <%@ taglib prefix="x" uri="http://java.sun.com/jsp/html/xml" %> --%>
+	
+	<!-- <x:out>
+	<x:parse>
+	<x:set >
+	<x:if >
+	<x:forEach>
+	<x:choose>
+	<x:when >
+	<x:otherwise >
+	<x:transform >
+	<x:param > -->
+	
+	<b>JSTL Functions</b> <br />
+	<%-- <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/html/functions" %> --%>
+
+	<!-- fn:contains()
+	fn:containsIgnoreCase()
+	fn:endsWith()
+	fn:escapeXml()
+	fn:indexOf()
+	fn:join()
+	fn:length()
+	fn:replace()
+	fn:split()
+	fn:startsWith()
+	fn:substring()
+	fn:substringAfter()
+	fn:substringBefore()
+	fn:toLowerCase()
+	fn:toUpperCase()
+	fn:trim() -->
+
+	<h2>B24 - Truy cập Database trong JSP</h2>
+	
+	<h2>B25 - Dữ liệu XML trong JSP</h2>
+	Gửi dữ liệu XML từ một JSP <br />
+	Tiến trình xử lý XML trong JSP <br />
+	Định dạng XML với JSP <br />
+	
+	<h2>B26 - JavaBeans trong JSP</h2>
+	<b>getPropertyName() - setPropertyName()</b> <br />
+	Các đặc tính của JavaBeans <br />
+	Ví dụ về JavaBeans <br />
+	Truy cập JavaBeans <br />
+	Truy cập các Property của JavaBeans <br />
+	
+	<h2>B27 - Custom Tags (Thẻ tùy biến) trong JSP</h2>
+	Tạo thẻ "Hello" trong JSP <br />
+	Truy cập phần thân thẻ trong JSP <br />
+	Thuộc tính của Custom Tag trong JSP <br />
+
+	<h2>B28 - Expression Language (EL) trong JSP</h2>
+	Cú pháp đơn giản cho JSP EL <br />
+	Toán tử cơ bản trong EL  <br />
+	Hàm trong JSP EL <br />
+	Các đối tượng ẩn trong JSP EL <br />
+	Đối tượng pageContext trong JSP <br />
+	Đối tượng Scope trong JSP <br />
+	Đối tượng param và paramValues trong JSP <br />
+	Đối tượng header và headerValues trong JSP <br />
+	
+	<h2>B29 - Xử lý ngoại lệ (Exception) trong JSP</h2>
+	Sử dụng đối tượng Exception trong JSP <br />
+	public String getMessage() - public Throwable getCause() - public String toString() - public void printStackTrace() - public StackTraceElement [] getStackTrace() - public Throwable fillInStackTrace() <br />
+	
+	Sử dụng JSTL tags cho Error Page trong JSP <br />
+	Sử dụng khối Try…Catch trong JSP <br />
+	
+	<h2>B30 - Debug trong JSP</h2>
+	Phương thức System.out.printIn() <br />
+	Sử dụng JDB Logger <br />
+	Công cụ Debug trong JSP <br />
+	Sử dụng JDB Debugger <br />
+	Sử dụng Comment trong JSP <br />
+	Các trường Header trên Client và Server <br />
+	Lời khuyên tốt cho Debug trong JSP <br />
+
+	<h2>B31 - Bảo mật trong JSP</h2>
+	Role dựa trên Authentication <br />
+	Form dựa trên Authentication <br />
+	Bảo mật tự động trong một Servlet/JSP <br />
+	String getAuthType() - boolean isUserInRole(java.lang.String role) - String getProtocol() -	boolean isSecure() - Principle getUserPrinciple() <br />
+
+	<h2>B32 - Đa ngôn ngữ (Internationalization| i18n| l10n) trong JSP</h2>
+	Nhận ra Locale <br />
+	String getCountry() - String getDisplayCountry() - String getLanguage() - String getDisplayLanguage() - String getISO3Country() - String getISO3Language() <br />
+	Thiết lập ngôn ngữ trong JSP <br />
+	Định dạng Date cụ thể cho Locale <br />
+	Định dạng Currency cụ thể cho Locale <br />
+	Định dạng Percentage cụ thể cho Locale <br />
+	
+</body>
+</html>

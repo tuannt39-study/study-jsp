@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JSPVJ</display-name>
+  
+	<!-- 
+	Filter trên sẽ áp dụng cho tất cả Servlet và JSP bởi vì chúng ta xác định /* trong cấu hình 
+	Bậc của Filter trong web.xml quyết định thứ tự mà Web container áp dụng Filter tới các Servlet hoặc JSP
+	LogFilter sẽ được áp dụng đầu tiên và sau đó áp dụng AuthenFilter 
+	<filter>
+	   <filter-name>LogFilter</filter-name>
+	   <filter-class>LogFilter</filter-class>
+	   <init-param>
+		  <param-name>test-param</param-name>
+		  <param-value>Initialization Paramter</param-value>
+	   </init-param>
+	</filter>
+	<filter-mapping>
+	   <filter-name>LogFilter</filter-name>
+	   <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+   <filter-name>AuthenFilter</filter-name>
+   <filter-class>AuthenFilter</filter-class>
+   <init-param>
+	  <param-name>test-param</param-name>
+	  <param-value>Initialization Paramter</param-value>
+   </init-param>
+	</filter>
+	<filter-mapping>
+	   <filter-name>AuthenFilter</filter-name>
+	   <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	Xóa Session Data trong JSP-->
+	<session-config>
+  	  <session-timeout>15</session-timeout>
+ 	</session-config>
+ 	
+ 	<context-param> 
+    <description>Location to store uploaded file</description> 
+    <param-name>file-upload</param-name> 
+    	<param-value>
+         /home/teo/Downloads/SOFT/apache-tomcat-8.5.20/data/
+     	</param-value> 
+	</context-param>
+	
+</web-app>
